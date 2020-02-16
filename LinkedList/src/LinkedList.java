@@ -7,7 +7,7 @@ public class LinkedList {
 		SinglyLinkedList sll = new SinglyLinkedList();
 		SinglyNode root = sll.CreateList();
 		sll.PrintList(root);		
-		SinglyNode newroot = sll.AddNodeAfterANode(root, 0, 22);	
+		SinglyNode newroot = sll.DeleteKey(root, 10);	
 		sll.PrintList(newroot);
 	}
 

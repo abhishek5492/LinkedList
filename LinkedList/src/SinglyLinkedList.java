@@ -179,6 +179,30 @@ public class SinglyLinkedList {
 		return root;
 	}
 
-	
+	public SinglyNode DeleteKey(SinglyNode root, int data) {
+		if(root == null) {
+			return root;
+		}
+		SinglyNode previous = root;
+		SinglyNode temp = root;
+		while(temp.next != null && temp.data != data ) {
+			previous = temp;
+			temp = temp.next;
+		}
+		if(temp.data == data ) {
+			if(temp == root) {
+				root = temp.next;
+				temp.next = null;
+			}
+			else {
+				previous.next = temp.next;
+			}
+		}
+		else {
+			return null;
+		}
+		return root;
+		
+	}
 }
 
