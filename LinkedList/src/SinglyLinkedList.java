@@ -204,5 +204,31 @@ public class SinglyLinkedList {
 		return root;
 		
 	}
+	
+	public SinglyNode DeleteAtGivenPosition(SinglyNode root, int position) {
+		
+		SinglyNode temp = root;
+		int count = 1;
+		SinglyNode previous = null;
+		while(temp != null) {
+			if(count == position) {
+				if(temp == root) {
+					root = temp.next;
+					temp.next = null;
+					return root;
+				}
+				temp.data = temp.next.data;
+				previous = temp.next;
+				temp.next = temp.next.next;
+				previous.next = null;
+			
+			}
+			temp = temp.next;
+			count++;
+		}
+		return root;
+	}
+
+
 }
 
